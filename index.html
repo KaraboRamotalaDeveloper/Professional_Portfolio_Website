@@ -15,11 +15,20 @@
           }
       }
 
-      function showPosition(position) {
+      async function showPosition(position) {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
+		  cont api_key="24254cfe66d642ab8f860dbe4d82dff5";
+		  const api_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`;
+		  try{
+		  const res = await fetch(api_URL);
+		  const data = await res.json();
+		  window.alert(`Weather: ${data.main.temp} `);
+		  }catch(error){
+		  window.alert("Error fetching the weather")
+		  }
           window.alert(`Your Location: Latitude: ${latitude}, Longitude: ${longitude}`);
-          window.alert(``);
+
       }
 
       function showError(error) {
