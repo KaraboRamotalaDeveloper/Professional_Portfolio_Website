@@ -6,6 +6,40 @@
     <link rel="stylesheet" href="./index.css" />
     <script src="https://kit.fontawesome.com/947ffa3401.js" crossorigin="anonymous"></script>
     <title>Karabo_Ramotala_Dev_Portfolio_Website</title>
+    <script>
+      window.onload = () =>  {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition, showError);
+          } else {
+              window.alert("Geolocation is not supported by this browser.");
+          }
+      }
+
+      function showPosition(position) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          window.alert(`Your Location: Latitude: ${latitude}, Longitude: ${longitude}`);
+          window.alert(``);
+      }
+
+      function showError(error) {
+          switch(error.code) {
+              case error.PERMISSION_DENIED:
+                  window.alert("User denied the request for Geolocation.");
+                  break;
+              case error.POSITION_UNAVAILABLE:
+                  window.alert("Location information is unavailable.");
+                  break;
+              case error.TIMEOUT:
+                  window.alert("The request to get user location timed out.");
+                  break;
+              case error.UNKNOWN_ERROR:
+                  window.alert("An unknown error occurred.");
+                  break;
+          }
+      }
+
+  </script>
   </head>
   <body>
 
