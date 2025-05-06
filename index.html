@@ -6,49 +6,7 @@
     <link rel="stylesheet" href="./index.css" />
     <script src="https://kit.fontawesome.com/947ffa3401.js" crossorigin="anonymous"></script>
     <title>Karabo_Ramotala_Dev_Portfolio_Website</title>
-    <script>
-      window.onload = () =>  {
-          if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition, showError);
-          } else {
-              window.alert("Geolocation is not supported by this browser.");
-          }
-      }
 
-      async function showPosition(position) {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-		  const api_key="24254cfe66d642ab8f860dbe4d82dff5";
-		  const api_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`;
-		  try{
-		  const res = await fetch(api_URL);
-		  const data = await res.json();
-		  window.alert(`Weather: ${data.main.temp} `);
-		  }catch(error){
-		  window.alert("Error fetching the weather")
-		  }
-          window.alert(`Your Location: Latitude: ${latitude}, Longitude: ${longitude}`);
-
-      }
-
-      function showError(error) {
-          switch(error.code) {
-              case error.PERMISSION_DENIED:
-                  window.alert("User denied the request for Geolocation.");
-                  break;
-              case error.POSITION_UNAVAILABLE:
-                  window.alert("Location information is unavailable.");
-                  break;
-              case error.TIMEOUT:
-                  window.alert("The request to get user location timed out.");
-                  break;
-              case error.UNKNOWN_ERROR:
-                  window.alert("An unknown error occurred.");
-                  break;
-          }
-      }
-
-  </script>
   </head>
   <body>
 
@@ -63,21 +21,20 @@
           <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
       </div>
-      <ul class="nav__links" id="nav-links">
+      <ul class="nav__links open" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skill">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="https://1drv.ms/b/c/345e28c410747ed3/EVz9ulCvSFNJvuNP-JunHvoBONk2uvx671zD8-aHxFmElQ?e=5a8IC0" download="">Download CV</a></li>
       </ul>
-      <div class="nav__btn">
+      <div class="nav__downloadcv__btn">
         <a href="https://1drv.ms/b/c/345e28c410747ed3/EVz9ulCvSFNJvuNP-JunHvoBONk2uvx671zD8-aHxFmElQ?e=5a8IC0" download="">Download CV</a>
       </div>
     </nav>
 
-    <!---->
     <header class="section__container header__container" id="about">
       <div class="header__image">
-        <img src="./assets/IMG-20230719-WA0073.jpg" alt="header-image" />
+        <img src="./assets/IMG-20230923-WA0026.jpg" alt="header-image" />
       </div>
       <div class="header__content">
         <p class="section__subheader">Welcome</p>
@@ -91,14 +48,13 @@
         </p>
 
         <div class="header__btns">
-          <button class="btn" mailto="karabojaz@gmail.com">Contact Me</button>
+          <button class="btn">Contact Me</button>
           <a href="#">
             View Portfolio
             <span><i class="ri-arrow-right-up-line"></i></span>
           </a>
         </div>
       </div>
-
     </header>
 
     <!--COMPONENT 2: SKILLS SECTION-->
@@ -109,12 +65,10 @@
           <p>Why<span> Hire Me ?</span></p>
         </h2>
         <p class="section__description">
-          <ul class="section__description_list">
-            <li>Strong understanding of Responsive Web Design principles</li>
-            <li>Committed to Agile development practices</li>
-            <li>Cross-Browser Compatibility</li>
-            <li>Adherence to Web Accessibility Standards<li>
-          </ul>
+          Strong understanding of Responsive Web Design principles,
+          committed to Agile development practices, and knowledgeable in ensuring
+          Cross-Browser Compatibility and adherence to Web Accessibility
+          Standards.
         </p>
         <div class="skill__btn">
           <button class="btn">Hire Me</button>
@@ -125,36 +79,25 @@
           <span><i class="ri-pulse-line"></i></span>
           <h4>Languages:</h4>
           <p>
-            <ul class="skill_card_list">
-              <li>Mastery of JavaScript (ES6+)</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>TypeScript</li>
-              <li>Java</li>
-              <li>C#</li>
-            </ul>
+            Mastery of JavaScript (ES6+), HTML5, CSS3, with proficient
+            use of TypeScript for typing support in large-scale applications.
           </p>
         </div>
         <div class="skill__card">
           <span><i class="ri-pencil-ruler-2-line"></i></span>
           <h4>Tools & Technologies:</h4>
           <p>
-            <ul class="skill_card_list">
-              <li>Proficient in essential development tools including Git, GitHub</li>
-              <li>Experienced in integrating RESTful APIs</li>
-              <li>Utilization of design tools like Figma for UI/UX design.</li>
-            </ul>
+            Proficient in essential development tools
+            including Git, GitHub, experienced in integrating RESTful APIs and
+            utilizing design tools like Figma for UI/UX design.
           </p>
         </div>
         <div class="skill__card">
           <span><i class="ri-graduation-cap-line"></i></span>
           <h4>Frameworks/Libraries: </h4>
           <p>
-            <ul class="skill_card_list">
-              <li>React.js</li>
-              <li>Redux for state management</li>
-              <li>NodeJS for server-side applications</li>
-            </ul>
+            Extensive experience with React.js and Redux for
+            state management.
           </p>
         </div>
       </div>
@@ -189,5 +132,34 @@
         </div>
       </div>
     </section>
+
+    <!--COMPONENT 4: CONTACT SECTIONS-->
+    <section class="section__container contact__container">
+
+      <p class="section__subheader">Contact</p>
+
+      <h2 class="section__header">Let's Connect, Collab And Work On <span>Project</span></h2>
+
+      <p class="section__description">
+        Whether you need a new website, a redesign, or custom functionality,
+        let's collaborate to create something amazing.
+      </p>
+
+
+        <ul class="__socials">
+          <li>
+            <a href="www.linkedin.com/in/karabo-ramotala-639589281"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/KaraboRamotalaDeveloper"><i class="fa fa-github" aria-hidden="true"></i></a>
+          </li>
+        </li>
+        </ul>
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/index.js"></script>
+    <script src="/elementsFunctionality.js"></script>
   </body>
 </html>
